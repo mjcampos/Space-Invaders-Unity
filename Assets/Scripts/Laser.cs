@@ -39,4 +39,9 @@ public class Laser : MonoBehaviour
     {
         _moveDirection = answer ? Vector2.down : Vector2.up;
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        Destroy(gameObject);
+    }
 }
