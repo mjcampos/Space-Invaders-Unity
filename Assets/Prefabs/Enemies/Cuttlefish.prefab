@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 8689671902277480074}
   - component: {fileID: 1926380722332330354}
   - component: {fileID: 5134983727472624482}
-  - component: {fileID: 5419262854156631309}
   - component: {fileID: 4541923618250858955}
+  - component: {fileID: 5419262854156631309}
   m_Layer: 0
   m_Name: Cuttlefish
   m_TagString: Untagged
@@ -136,18 +136,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.38, y: 0.32}
   m_EdgeRadius: 0
---- !u!114 &5419262854156631309
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1676770648477156823}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80fb744ee3ed1224aa9ef217d4e0a295, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &4541923618250858955
 Animator:
   serializedVersion: 7
@@ -170,3 +158,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5419262854156631309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676770648477156823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80fb744ee3ed1224aa9ef217d4e0a295, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 3389464641773204103, guid: 760fc49031d03cd4195c5f666a2cf64b, type: 3}
+  size: 1

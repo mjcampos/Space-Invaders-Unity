@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1007320519442410514}
   - component: {fileID: 5645765701845887740}
-  - component: {fileID: 2268764710800873914}
   - component: {fileID: 7650607765735010505}
+  - component: {fileID: 2268764710800873914}
   - component: {fileID: 959324033573145529}
   m_Layer: 0
   m_Name: Crab
@@ -90,28 +90,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &2268764710800873914
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7496739326450266616}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7b25ddc66f968fa4999b9a336dcf22d3, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!61 &7650607765735010505
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -158,6 +136,28 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.46, y: 0.45}
   m_EdgeRadius: 0
+--- !u!95 &2268764710800873914
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7496739326450266616}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7b25ddc66f968fa4999b9a336dcf22d3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &959324033573145529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,3 +170,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80fb744ee3ed1224aa9ef217d4e0a295, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosion: {fileID: 3389464641773204103, guid: 760fc49031d03cd4195c5f666a2cf64b, type: 3}
+  size: 2
