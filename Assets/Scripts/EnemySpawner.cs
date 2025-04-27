@@ -19,11 +19,15 @@ public class EnemySpawner : MonoBehaviour {
             // Calculate the total width of the enemies in this row, including horizontal spacing
             float rowWidth = 0f;
             
+            // Get the prefab for this row's enemy prefab
+            GameObject enemyPrefab = enemyPrefabs[row];
+            
+            // Get the width of this row's enemy prefab
+            SpriteRenderer enemyRenderer = enemyPrefab.GetComponent<SpriteRenderer>();
+            
+            // Iterate through each enemy in this row and add their width and spacing
             for (int col = 0; col < enemiesPerRow; col++) {
-                GameObject enemyPrefab = enemyPrefabs[row % enemyPrefabs.Length];
-                SpriteRenderer enemyRenderer = enemyPrefab.GetComponent<SpriteRenderer>();
-                
-                rowWidth += enemyRenderer.bounds.size.x + horizontalSpacing;  // Add width and spacing of each enemy
+                rowWidth += enemyRenderer.bounds.size.x + horizontalSpacing;
             }
 
             // Remove the extra spacing added at the end of the row
@@ -33,12 +37,6 @@ public class EnemySpawner : MonoBehaviour {
             float startX = -(rowWidth / 2f);  // Center the row horizontally
 
             for (int col = 0; col < enemiesPerRow; col++) {
-                // Choose the prefab for this enemy
-                GameObject enemyPrefab = enemyPrefabs[row % enemyPrefabs.Length];
-
-                // Get the width of the current enemy prefab
-                SpriteRenderer enemyRenderer = enemyPrefab.GetComponent<SpriteRenderer>();
-
                 // Calculate the spawn position for this enemy
                 Vector3 spawnPosition = new Vector3(
                     transform.position.x + startX + col * (enemyRenderer.bounds.size.x + horizontalSpacing),  // Adjust for spacing
