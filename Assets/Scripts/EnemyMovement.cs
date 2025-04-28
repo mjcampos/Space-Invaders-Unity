@@ -59,8 +59,8 @@ public class EnemyMovement : MonoBehaviour {
                 
                 float xPos = transform.position.x;
                 float clampedX = Mathf.Clamp(xPos, _leftEdge, _rightEdge);
-                transform.position = new Vector3(clampedX, transform.position.y, transform.position.z);
                 
+                transform.position = new Vector3(clampedX, transform.position.y, transform.position.z);
                 _nextMove = (transform.position.x >= _rightEdge || transform.position.x <= _leftEdge) ? State.Drop : State.Move;
                 
                 break;
@@ -69,6 +69,7 @@ public class EnemyMovement : MonoBehaviour {
                 transform.Translate(Vector3.down * dropDistance);
                 _movingRight = !_movingRight;  // Flip direction
                 _nextMove = State.Move;
+                
                 break;
         }
         
