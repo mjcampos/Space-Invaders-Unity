@@ -7,7 +7,6 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] float moveDistance = 0.2f;
     [SerializeField] float dropDistance = 0.5f;
     [SerializeField] float moveInterval = 1.0f;
-    [SerializeField] float speedIncreaseFactor = 0.9f;
     [SerializeField] float accelerationRate = 0.01f;  // How much faster after each move
 
     [Header("Sound Settings")] 
