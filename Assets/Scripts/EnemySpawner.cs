@@ -7,9 +7,9 @@ public class EnemySpawner : MonoBehaviour {
     [SerializeField] float verticalSpacing = 2f;
 
     int _rows = 4;
-    
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start() {
+
+    public void StartSpawning()
+    {
         SpawnEnemies();
         RecenterParent();
     }
