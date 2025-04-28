@@ -7,7 +7,6 @@ public class Laser : MonoBehaviour
     
     Rigidbody2D _rigidbody2D;
     Camera _camera;
-    Vector2 _moveDirection = Vector2.up;
 
     void Start()
     {
@@ -17,7 +16,7 @@ public class Laser : MonoBehaviour
 
     void FixedUpdate()
     {
-        _rigidbody2D.linearVelocity = _moveDirection * speed;
+        _rigidbody2D.linearVelocity = Vector2.up * speed;
         
         // Check if the laser is outside the camera's view
         if (IsOffScreen())
@@ -32,12 +31,7 @@ public class Laser : MonoBehaviour
         Vector3 viewportPos = _camera.WorldToViewportPoint(transform.position);
         
         // Check if the laser is outside the camera's visible area
-        return viewportPos.y > 1f || viewportPos.y < 0f;
-    }
-
-    public void NeedToShootDownwards(bool answer)
-    {
-        _moveDirection = answer ? Vector2.down : Vector2.up;
+        return viewportPos.y > 1f;
     }
 
     void OnTriggerEnter2D(Collider2D other)

@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class Shooting : MonoBehaviour {
     [SerializeField] GameObject laserPrefab;
@@ -11,8 +10,6 @@ public class Shooting : MonoBehaviour {
     Vector3 _laserPrefabStartingPosition;
 
     void Start() {
-        _laserPrefabStartingPosition = laserPrefab.transform.position;
-        
         _animator = GetComponent<Animator>();
     }
 
@@ -21,12 +18,13 @@ public class Shooting : MonoBehaviour {
             // Mark the player as currently shooting
             _isShooting = true;
             
+            // Get the position we want the laser to spawn in
+            _laserPrefabStartingPosition = laserPrefab.transform.position + transform.position;
+            
             // Generate laser
-            GameObject laser = Instantiate(laserPrefab, transform.position + _laserPrefabStartingPosition, Quaternion.identity, transform);
-            Laser laserScript = laser.GetComponent<Laser>();
+            GameObject laser = Instantiate(laserPrefab, _laserPrefabStartingPosition, Quaternion.identity, transform);
             
             laser.transform.parent = null;
-            laserScript.NeedToShootDownwards(false);
             
             _animator.Play("Player_shooting");
         }
