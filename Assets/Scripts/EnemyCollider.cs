@@ -11,9 +11,19 @@ public class EnemyCollider : MonoBehaviour
 {
     [SerializeField] GameObject explosion;
     [SerializeField] Size size;
+    [SerializeField] GameObject explosionSound;
     
     void OnTriggerEnter2D(Collider2D other)
     {
+        // Instantiate a temporary audio source at the enemy's position
+        GameObject tempAudio = Instantiate(explosionSound, transform.position, Quaternion.identity);
+        AudioSource audioSource = tempAudio.GetComponent<AudioSource>();
+
+        audioSource.Play();
+        
+        // Destroy temp audio object after sound finishes
+        Destroy(tempAudio, audioSource.clip.length);;
+        
         if (other.gameObject.CompareTag("Laser"))
         {
             GameObject explosionInstance = Instantiate(explosion, transform.position, Quaternion.identity);

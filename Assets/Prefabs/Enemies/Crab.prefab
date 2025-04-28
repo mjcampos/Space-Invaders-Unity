@@ -172,3 +172,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 3389464641773204103, guid: 760fc49031d03cd4195c5f666a2cf64b, type: 3}
   size: 2
+  explosionSound: {fileID: 6299879923131925074, guid: 46893d6f3c781ec49bdfd4a597631547, type: 3}
