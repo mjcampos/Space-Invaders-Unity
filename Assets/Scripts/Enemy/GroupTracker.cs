@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class GroupTracker : MonoBehaviour {
@@ -13,8 +14,15 @@ public class GroupTracker : MonoBehaviour {
     public void DecrementCounter() {
         _counter--;
         
-        if (_counter <= 0) {
-            GameManager.Instance.PlayerWon();
+        if (_counter <= 0)
+        {
+            StartCoroutine(AlertGameManagerOfWin());
         }
+    }
+
+    IEnumerator AlertGameManagerOfWin()
+    {
+        yield return new WaitForSeconds(0.5f);
+        GameManager.Instance.PlayerWon();
     }
 }
