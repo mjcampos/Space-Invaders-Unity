@@ -11,7 +11,6 @@ public class EnemyShooting : MonoBehaviour
     
     [Header("Overlap Circle Detection Settings")]
     [SerializeField] Vector2 capsuleSize = new Vector2(0.5f, 1f);  // Width and height of the capsule
-    [SerializeField] CapsuleDirection2D  capsuleDirection  = CapsuleDirection2D.Vertical;  // Direction of the capsule
     [SerializeField] float verticalOffset = 0.5f;  // How far below the enemy to check
     
 
@@ -27,10 +26,8 @@ public class EnemyShooting : MonoBehaviour
     void Update() {
         _shootTimer -= Time.deltaTime;
 
-        if (_shootTimer <= 0f)
-        {
-            if (CanShoot())
-            {
+        if (_shootTimer <= 0f) {
+            if (CanShoot()) {
                 Shoot();
             }
 
@@ -38,13 +35,12 @@ public class EnemyShooting : MonoBehaviour
         }
     }
 
-    bool CanShoot()
-    {
+    bool CanShoot() {
         Vector3 checkPosition = transform.position + Vector3.down * verticalOffset;
         Collider2D hit = Physics2D.OverlapCapsule(
             checkPosition,
             capsuleSize,
-            capsuleDirection,
+            CapsuleDirection2D.Vertical,  // Direction of the capsule
             0f,
             enemyLayer
         );
@@ -57,8 +53,7 @@ public class EnemyShooting : MonoBehaviour
         return hit == null;
     }
 
-    void Shoot()
-    {
+    void Shoot() {
         // Get the position we want the bomb to spawn in
         _bombPrefabStartingPosition = bombPrefab.transform.position + transform.position;
         
@@ -68,13 +63,11 @@ public class EnemyShooting : MonoBehaviour
         bomb.transform.parent = null;
     }
 
-    void ResetShootTimer()
-    {
+    void ResetShootTimer() {
         _shootTimer = Random.Range(minShootDelay, maxShootDelay);
     }
     
-    void OnDrawGizmosSelected()
-    {
+    void OnDrawGizmosSelected() {
         Vector3 checkPosition = transform.position + Vector3.down * verticalOffset;
         Gizmos.color = CanShoot() ? Color.green : Color.red;
         Gizmos.DrawWireCube(checkPosition, capsuleSize);
