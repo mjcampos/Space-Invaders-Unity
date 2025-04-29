@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using UnityEngine;
 
 public class Bomb : MonoBehaviour {
@@ -25,32 +26,34 @@ public class Bomb : MonoBehaviour {
     {
         /*
          * When a bomb hits another object these events will happen
-         * 1. Generate a explosion sound
+         * 1. Check if target hitting is invalid, if so don't proceed
+         * 2. Generate a explosion sound
          *      a. Destroy temp audio after sound finishes
-         * 2. Generate an explosion animation
-         * 3. Destroy this bomb object
+         * 3. Generate an explosion animation
+         * 4. Destroy this bomb object
          */
 
+        // Step 1
         if (other.CompareTag("Enemy"))
         {
             return;
         }
         
-        // Step 1
+        // Step 2
         GameObject tempAudio = Instantiate(explosionSound, transform.position, Quaternion.identity);
         AudioSource audioSource = tempAudio.GetComponent<AudioSource>();
         
         audioSource.Play();
         
-        // Step 1 - a
+        // Step 2 - a
         Destroy(tempAudio, audioSource.clip.length);;
         
-        // Step 2
+        // Step 3
         GameObject explosionInstance = Instantiate(explosionAnim, transform.position, Quaternion.identity);
         
         explosionInstance.transform.SetParent(null);
         
-        // Step 3
+        // Step 4
         Destroy(gameObject);
     }
 
