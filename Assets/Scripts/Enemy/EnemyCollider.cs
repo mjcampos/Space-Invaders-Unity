@@ -16,10 +16,12 @@ public class EnemyCollider : MonoBehaviour {
     
     Points _points;
     UFOPoints _ufoPoints;
+    GroupTracker _groupTracker;
 
     void Start() {
         _points = GetComponent<Points>();
         _ufoPoints = GetComponent<UFOPoints>();
+        _groupTracker = GetComponentInParent<GroupTracker>();
     }
     
     void OnTriggerEnter2D(Collider2D other) {
@@ -30,7 +32,8 @@ public class EnemyCollider : MonoBehaviour {
          * 2. Generate an explosion animation
          * 3. Alert the points script to update the score manager
          *      a. If enemy is the UFO (boss) then alert UFOPoints script instead
-         * 4. Destroy this enemy object
+         * 4. Alert the parent tracker to decrement child counter
+         * 5. Destroy this enemy object
          */
 
         if (other.CompareTag("Bomb"))
@@ -68,8 +71,13 @@ public class EnemyCollider : MonoBehaviour {
             }
         }
         
-        
         // Step 4
+        if (_groupTracker)
+        {
+            _groupTracker.DecrementCounter();
+        }
+        
+        // Step 5
         Destroy(gameObject);
     }
 }

@@ -1047,14 +1047,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2584546581632218646, guid: f8199d5f47966d7478327082b8ec5157, type: 3}
-      propertyPath: isBoss
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5299939931478792195, guid: f8199d5f47966d7478327082b8ec5157, type: 3}
-      propertyPath: minDelay
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 5639497680244491015, guid: f8199d5f47966d7478327082b8ec5157, type: 3}
       propertyPath: m_Name
       value: UFO
@@ -1954,6 +1946,7 @@ GameObject:
   - component: {fileID: 1445130817}
   - component: {fileID: 1445130820}
   - component: {fileID: 1445130821}
+  - component: {fileID: 1445130822}
   m_Layer: 0
   m_Name: Enemies
   m_TagString: Untagged
@@ -2123,6 +2116,19 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 183aad2d2aa11e043825f5f6ab554ad4, type: 3}
   - {fileID: 8300000, guid: 94a0839cf5c3c074296efe636b16a246, type: 3}
   - {fileID: 8300000, guid: c60dc6842a34dc94692597af6ec87d16, type: 3}
+--- !u!114 &1445130822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1445130816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c405ac08111768e4f97ac0dd79af7eb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isTesting: 1
 --- !u!1001 &1503126344
 PrefabInstance:
   m_ObjectHideFlags: 0
