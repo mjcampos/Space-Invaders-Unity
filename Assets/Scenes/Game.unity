@@ -918,10 +918,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5639497680244491015, guid: f8199d5f47966d7478327082b8ec5157, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1021755399}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8199d5f47966d7478327082b8ec5157, type: 3}
 --- !u!1001 &959115687
 PrefabInstance:
@@ -1047,31 +1044,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3490614192347607701, guid: e01dd3c4cbb47ef4799d56fd84e606a8, type: 3}
   m_PrefabInstance: {fileID: 976749931}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1021755390 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5639497680244491015, guid: f8199d5f47966d7478327082b8ec5157, type: 3}
-  m_PrefabInstance: {fileID: 951790584}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1021755399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1021755390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df832f715d4c07e46b59e00be9400a18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bombPrefab: {fileID: 5824990278927219023, guid: dca567ffaff14c2488a896a5bfe27f30, type: 3}
-  minShootDelay: 2
-  maxShootDelay: 10
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  capsuleSize: {x: 0.5, y: 3.5}
-  verticalOffset: 2
 --- !u!1001 &1032490588
 PrefabInstance:
   m_ObjectHideFlags: 0
