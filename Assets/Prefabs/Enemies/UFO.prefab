@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 4367448686362642236}
   - component: {fileID: 2584546581632218646}
   - component: {fileID: 4868833936779798734}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: UFO
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80fb744ee3ed1224aa9ef217d4e0a295, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 3389464641773204103, guid: 760fc49031d03cd4195c5f666a2cf64b, type: 3}
+  explosionAnim: {fileID: 3389464641773204103, guid: 760fc49031d03cd4195c5f666a2cf64b, type: 3}
   size: 3
   explosionSound: {fileID: 6299879923131925074, guid: 46893d6f3c781ec49bdfd4a597631547, type: 3}
 --- !u!50 &4868833936779798734

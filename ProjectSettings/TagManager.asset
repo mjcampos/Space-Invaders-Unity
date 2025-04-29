@@ -6,11 +6,13 @@ TagManager:
   tags:
   - Laser
   - Shield
+  - Enemy
+  - Bomb
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Enemy
   - Water
   - UI
   - 

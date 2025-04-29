@@ -21,6 +21,11 @@ public class EnemyCollider : MonoBehaviour {
          * 2. Generate an explosion animation
          * 3. Destroy this enemy object
          */
+
+        if (other.CompareTag("Bomb"))
+        {
+            return;
+        }
         
         // Step 1
         GameObject tempAudio = Instantiate(explosionSound, transform.position, Quaternion.identity);

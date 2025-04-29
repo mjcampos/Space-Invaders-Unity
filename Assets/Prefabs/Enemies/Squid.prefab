@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 4020220966386774275}
   - component: {fileID: 777535838364344325}
   - component: {fileID: 2250083580294250159}
-  m_Layer: 0
+  - component: {fileID: 6480397229963982965}
+  m_Layer: 3
   m_Name: Squid
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -171,7 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80fb744ee3ed1224aa9ef217d4e0a295, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 3389464641773204103, guid: 760fc49031d03cd4195c5f666a2cf64b, type: 3}
+  explosionAnim: {fileID: 3389464641773204103, guid: 760fc49031d03cd4195c5f666a2cf64b, type: 3}
   size: 1
   explosionSound: {fileID: 6299879923131925074, guid: 46893d6f3c781ec49bdfd4a597631547, type: 3}
 --- !u!50 &2250083580294250159
@@ -201,3 +202,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &6480397229963982965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091072073835279391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df832f715d4c07e46b59e00be9400a18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bombPrefab: {fileID: 5824990278927219023, guid: dca567ffaff14c2488a896a5bfe27f30, type: 3}
+  minShootDelay: 1
+  maxShootDelay: 3
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  capsuleSize: {x: 0.2, y: 1.8}
+  capsuleDirection: 0
+  verticalOffset: 1.1
