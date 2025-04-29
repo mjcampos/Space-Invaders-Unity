@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 959324033573145529}
   - component: {fileID: 8250493040677732732}
   - component: {fileID: 1327368671115606581}
+  - component: {fileID: -2891252088689040655}
   m_Layer: 3
   m_Name: Crab
   m_TagString: Enemy
@@ -221,5 +222,17 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   capsuleSize: {x: 0.45, y: 2.7}
-  capsuleDirection: 0
   verticalOffset: 1.6
+--- !u!114 &-2891252088689040655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7496739326450266616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02ae69ef0c52bbd4ba875fc339548d1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points: 30

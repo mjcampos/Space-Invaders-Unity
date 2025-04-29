@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5419262854156631309}
   - component: {fileID: 7990820019933419653}
   - component: {fileID: -3977261208730790429}
+  - component: {fileID: 993633358300199774}
   m_Layer: 3
   m_Name: Cuttlefish
   m_TagString: Enemy
@@ -221,5 +222,17 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   capsuleSize: {x: 0.3, y: 0.5}
-  capsuleDirection: 0
   verticalOffset: 0.45
+--- !u!114 &993633358300199774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676770648477156823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02ae69ef0c52bbd4ba875fc339548d1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points: 10

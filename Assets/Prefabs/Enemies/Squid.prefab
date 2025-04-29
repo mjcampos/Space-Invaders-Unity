@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 777535838364344325}
   - component: {fileID: 2250083580294250159}
   - component: {fileID: 6480397229963982965}
+  - component: {fileID: 3347351410681714184}
   m_Layer: 3
   m_Name: Squid
   m_TagString: Enemy
@@ -221,5 +222,17 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   capsuleSize: {x: 0.2, y: 1.8}
-  capsuleDirection: 0
   verticalOffset: 1.1
+--- !u!114 &3347351410681714184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091072073835279391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02ae69ef0c52bbd4ba875fc339548d1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points: 20
