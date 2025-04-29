@@ -72,6 +72,7 @@ public class GameManager : MonoBehaviour {
          * 1. Freeze the game
          * 2. Alert the player that they won
          * 3. Give them the option to play again
+         * 4. Save score to high score manager
          */
         
         // Step 1
@@ -82,6 +83,11 @@ public class GameManager : MonoBehaviour {
         
         // Step 3
         _hasOptionToRestart = true;
+        
+        // Step 4
+        int score = ScoreManager.Instance.GetScore();
+        
+        HighScoreManager.Instance.SaveScore(score);
     }
 
     public void PlayerLost()
@@ -91,6 +97,7 @@ public class GameManager : MonoBehaviour {
          * 1. Freeze the game
          * 2. Alert the player that they lost
          * 3. Give them the option to play again
+         * 4. Save score to high score manager
          */
         
         // Step 1
@@ -101,6 +108,11 @@ public class GameManager : MonoBehaviour {
         
         // Step 3
         _hasOptionToRestart = true;
+        
+        // Step 4
+        int score = ScoreManager.Instance.GetScore();
+        
+        HighScoreManager.Instance.SaveScore(score);
     }
 
     public void CountdownEnded()

@@ -33,6 +33,11 @@ public class ScoreManager : MonoBehaviour {
         UpdateScoreDisplay();
     }
 
+    public int GetScore()
+    {
+        return _score;   
+    }
+
     void UpdateScoreDisplay()
     {
         scoreText.text = "Score: " + _score.ToString();
