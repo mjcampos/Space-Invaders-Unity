@@ -49,12 +49,7 @@ public class EnemyShooting : MonoBehaviour
             enemyLayer
         );
         
-        if (hit != null)
-        {
-            return false;
-        }
-        
-        return true;
+        return hit == null;
     }
 
     void Shoot()
