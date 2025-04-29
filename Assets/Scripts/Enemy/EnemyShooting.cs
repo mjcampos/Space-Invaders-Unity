@@ -49,6 +49,11 @@ public class EnemyShooting : MonoBehaviour
             enemyLayer
         );
         
+        /*
+         * If the hit collider detects something then it's another enemy
+         * In that case we return false because we don't want to hit it
+         * Otherwise it's not a fellow enemy and enemy is allowed to hit
+         */
         return hit == null;
     }
 
