@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour {
     
     InputActionMap _uiInputActionMap;
     InputAction _restartInputAction;
+    InputAction _backInputAction;
     
     bool _hasOptionToRestart = false;
 
@@ -29,8 +30,8 @@ public class GameManager : MonoBehaviour {
     {
         _uiInputActionMap = inputActionAsset.FindActionMap("UI");
         
-        // We need the restart input action
         _restartInputAction = _uiInputActionMap.FindAction("Restart");
+        _backInputAction = _uiInputActionMap.FindAction("Back");
         
         GameLoaded();
     }
@@ -38,6 +39,7 @@ public class GameManager : MonoBehaviour {
     void Update()
     {
         RestartListener();
+        BackListener();
     }
 
     void GameLoaded()
@@ -125,6 +127,14 @@ public class GameManager : MonoBehaviour {
         if (_restartInputAction.triggered && _hasOptionToRestart)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+    }
+
+    void BackListener()
+    {
+        if (_backInputAction.triggered)
+        {
+            SceneManager.LoadScene("MainMenu");
         }
     }
 }
