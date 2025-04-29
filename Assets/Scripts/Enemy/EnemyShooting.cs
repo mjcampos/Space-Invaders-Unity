@@ -13,7 +13,6 @@ public class EnemyShooting : MonoBehaviour
     [SerializeField] Vector2 capsuleSize = new Vector2(0.5f, 1f);  // Width and height of the capsule
     [SerializeField] float verticalOffset = 0.5f;  // How far below the enemy to check
     
-
     float _shootTimer;
     Vector3 _bombPrefabStartingPosition;
     
