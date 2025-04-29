@@ -5,7 +5,6 @@ using UnityEngine;
 public class ScoreManager : MonoBehaviour {
     public static ScoreManager Instance { get; private set; }
 
-    [Header("UI Elements")] 
     [SerializeField] TextMeshProUGUI scoreText;
     
     int _score = 0;
@@ -37,5 +36,11 @@ public class ScoreManager : MonoBehaviour {
     void UpdateScoreDisplay()
     {
         scoreText.text = "Score: " + _score.ToString();
+    }
+
+    public void ResetScore()
+    {
+        _score = 0;
+        UpdateScoreDisplay();
     }
 }
