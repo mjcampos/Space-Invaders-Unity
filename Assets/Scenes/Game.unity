@@ -1053,7 +1053,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5299939931478792195, guid: f8199d5f47966d7478327082b8ec5157, type: 3}
       propertyPath: minDelay
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5639497680244491015, guid: f8199d5f47966d7478327082b8ec5157, type: 3}
       propertyPath: m_Name
