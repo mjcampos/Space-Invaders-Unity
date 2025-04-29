@@ -78,7 +78,26 @@ public class GameManager : MonoBehaviour {
         Time.timeScale = 0f;
         
         // Step 2
-        PlayerWonManager.Instance.ShowWinText();
+        WonManager.Instance.ShowWinText();
+        
+        // Step 3
+        _hasOptionToRestart = true;
+    }
+
+    public void PlayerLost()
+    {
+        /*
+         * When player has lost perform the following sequence:
+         * 1. Freeze the game
+         * 2. Alert the player that they lost
+         * 3. Give them the option to play again
+         */
+        
+        // Step 1
+        Time.timeScale = 0f;
+        
+        // Step 2
+        LostManager.Instance.ShowLostText();
         
         // Step 3
         _hasOptionToRestart = true;

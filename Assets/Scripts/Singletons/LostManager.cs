@@ -1,11 +1,10 @@
-using System;
-using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public class PlayerWonManager : MonoBehaviour {
-    public static PlayerWonManager Instance { get; private set; }
+public class LostManager : MonoBehaviour {
+    public static LostManager Instance { get; private set; }
     
-    [SerializeField] GameObject winText;
+    [SerializeField] GameObject lostText;
 
     void Awake()
     {
@@ -21,11 +20,11 @@ public class PlayerWonManager : MonoBehaviour {
 
     void Start()
     {
-        winText.SetActive(false);
+        lostText.SetActive(false);
     }
     
-    public void ShowWinText()
+    public void ShowLostText()
     {
-        winText.SetActive(true);
+        lostText.SetActive(true);
     }
 }
