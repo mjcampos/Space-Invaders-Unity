@@ -14,7 +14,7 @@ public class GroupTracker : MonoBehaviour {
         _counter--;
         
         if (_counter <= 0) {
-            Debug.Log("Group Destroyed");
+            GameManager.Instance.PlayerWon();
         }
     }
 }
