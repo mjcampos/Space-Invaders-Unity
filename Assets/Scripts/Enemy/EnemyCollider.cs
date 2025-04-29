@@ -12,6 +12,15 @@ public class EnemyCollider : MonoBehaviour {
     [FormerlySerializedAs("explosion")] [SerializeField] GameObject explosionAnim;
     [SerializeField] Size size;
     [SerializeField] GameObject explosionSound;
+    [SerializeField] bool isBoss = false;
+    
+    Points _points;
+    UFOPoints _ufoPoints;
+
+    void Start() {
+        _points = GetComponent<Points>();
+        _ufoPoints = GetComponent<UFOPoints>();
+    }
     
     void OnTriggerEnter2D(Collider2D other) {
         /*
@@ -19,7 +28,9 @@ public class EnemyCollider : MonoBehaviour {
          * 1. Generate a explosion sound
          *      a. Destroy temp audio after sound finishes
          * 2. Generate an explosion animation
-         * 3. Destroy this enemy object
+         * 3. Alert the points script to update the score manager
+         *      a. If enemy is the UFO (boss) then alert UFOPoints script instead
+         * 4. Destroy this enemy object
          */
 
         if (other.CompareTag("Bomb"))
@@ -43,6 +54,22 @@ public class EnemyCollider : MonoBehaviour {
         explosionInstance.transform.SetParent(null);
         
         // Step 3
+        if (isBoss)
+        {
+            if (_ufoPoints != null)
+            {
+                _ufoPoints.SendPointsToScoreManager();
+            }
+        }
+        else
+        {
+            if (_points != null) {
+                _points.SendPointsToScoreManager();
+            }
+        }
+        
+        
+        // Step 4
         Destroy(gameObject);
     }
 }

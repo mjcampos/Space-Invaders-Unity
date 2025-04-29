@@ -49,4 +49,9 @@ public class UFOPoints : MonoBehaviour {
         // Return 50 by default
         return 50;
     }
+    
+    public void SendPointsToScoreManager()
+    {
+        ScoreManager.Instance.AddScore(points);
+    }
 }
