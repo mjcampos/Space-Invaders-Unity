@@ -45,10 +45,10 @@ public class Lives : MonoBehaviour {
         if (_gamepad != null)
         {
             // Set vibration: LeftMotor (low freq), rightMotor (high freq)
-            _gamepad.SetMotorSpeeds(0.4f, 0.8f);
+            _gamepad.SetMotorSpeeds(0.5f, 0.5f);
             
             // Stop vibration after short delay
-            StartCoroutine(StopRumbleAfterDelay(0.4f));
+            StartCoroutine(StopRumbleAfterDelay(0.3f));
         }
     }
 
