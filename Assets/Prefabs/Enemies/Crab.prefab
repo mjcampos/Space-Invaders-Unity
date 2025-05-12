@@ -173,9 +173,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80fb744ee3ed1224aa9ef217d4e0a295, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionAnim: {fileID: 3389464641773204103, guid: 760fc49031d03cd4195c5f666a2cf64b, type: 3}
+  explosionAnim: {fileID: 7630236679980478688, guid: 915e3e20222c36e4499e96a99e0d30de, type: 3}
   size: 2
   explosionSound: {fileID: 6299879923131925074, guid: 46893d6f3c781ec49bdfd4a597631547, type: 3}
+  isBoss: 0
 --- !u!50 &8250493040677732732
 Rigidbody2D:
   serializedVersion: 5
