@@ -722,7 +722,31 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      player-attack-sprite-sheet_0: 208854984698918858
+      player-attack-sprite-sheet_1: 7892685993254051537
+      player-attack-sprite-sheet_10: 2023735483752315809
+      player-attack-sprite-sheet_11: 3763211032615903222
+      player-attack-sprite-sheet_12: -1036053823985815028
+      player-attack-sprite-sheet_13: 7129058024438533571
+      player-attack-sprite-sheet_14: 3572888429717274045
+      player-attack-sprite-sheet_15: -4355793027286117404
+      player-attack-sprite-sheet_16: -8772898355731678284
+      player-attack-sprite-sheet_17: -2428753925194133771
+      player-attack-sprite-sheet_18: 3355366325901792013
+      player-attack-sprite-sheet_19: -3892820242207558594
+      player-attack-sprite-sheet_2: -2751009249022603204
+      player-attack-sprite-sheet_20: -2558828042086484954
+      player-attack-sprite-sheet_21: 274980066407601516
+      player-attack-sprite-sheet_22: 4046725343277199168
+      player-attack-sprite-sheet_23: -8101028070172138090
+      player-attack-sprite-sheet_3: 8158542121660208885
+      player-attack-sprite-sheet_4: 2165627095723730683
+      player-attack-sprite-sheet_5: -2519470271542334630
+      player-attack-sprite-sheet_6: -5651399571544757296
+      player-attack-sprite-sheet_7: -3094594498373457069
+      player-attack-sprite-sheet_8: -4188419538926452807
+      player-attack-sprite-sheet_9: -3115538980075837152
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

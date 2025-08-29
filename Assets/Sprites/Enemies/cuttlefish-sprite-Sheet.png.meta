@@ -172,7 +172,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cuttlefish-sprite-Sheet_0: 4335685761443358129
+      cuttlefish-sprite-Sheet_1: -4678757309317499307
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -172,7 +172,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      squid-sprite-Sheet_0: 8320237215664343404
+      squid-sprite-Sheet_1: -6488676006655270438
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

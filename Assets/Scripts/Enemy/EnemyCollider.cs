@@ -25,6 +25,8 @@ public class EnemyCollider : MonoBehaviour {
     }
     
     void OnTriggerEnter2D(Collider2D other) {
+        if (other.CompareTag("Bomb")) return;
+        
         /*
          * When an enemy hits another object these events will happen
          * 1. Generate a explosion sound
@@ -35,11 +37,6 @@ public class EnemyCollider : MonoBehaviour {
          * 4. Alert the parent tracker to decrement child counter
          * 5. Destroy this enemy object
          */
-
-        if (other.CompareTag("Bomb"))
-        {
-            return;
-        }
         
         // Step 1
         GameObject tempAudio = Instantiate(explosionSound, transform.position, Quaternion.identity);

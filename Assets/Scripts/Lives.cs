@@ -3,13 +3,22 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Lives : MonoBehaviour {
-    int _lives = 3;
+public class Lives : MonoBehaviour
+{
+    [Header("Explosion Manager")]
+    [SerializeField] GameObject explosionAnim;
+    [SerializeField] GameObject explosionSound;
+    
+    [Header("Lives Manager")]
+    [SerializeField, Range(1, 3)] int lives = 3;
+    
     Gamepad _gamepad;
 
     void Start()
     {
         _gamepad = Gamepad.current;
+        
+        LivesDisplayManager.Instance.SetLivesDisplay(lives);
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -18,20 +27,43 @@ public class Lives : MonoBehaviour {
         GiveGamePadARumble();
         
         // Decrement a life
-        _lives--;
+        lives--;
         
-        LivesDisplayManager.Instance.RemoveLife();
+        LivesDisplayManager.Instance.RemoveLife(lives);
 
-        if (_lives < 1)
+        if (lives < 1)
         {
-            StartCoroutine(DelayBeforeNotification());
+            PlayerDestructionSequence();
         }
     }
 
-    IEnumerator DelayBeforeNotification()
+    void PlayerDestructionSequence()
     {
-        yield return new WaitForSeconds(0.5f);
-        GameManager.Instance.PlayerLost();
+        /*
+         * When player gets destroyed trigger following events:
+         * 1. Generate an explosion sound
+         *      a. Destroy temp audio after sound finishes
+         * 2. Generate an explosion animation
+         * 3. Destroy the player
+         */
+        
+        // Step 1
+        GameObject tempAudio = Instantiate(explosionSound, transform.position, Quaternion.identity);
+        AudioSource audioSource = tempAudio.GetComponent<AudioSource>();
+        
+        audioSource.Play();
+        
+        // Step 1 - a
+        Destroy(tempAudio, audioSource.clip.length);
+        
+        // Step 2
+        GameObject explosionInstance = Instantiate(explosionAnim, transform.position, Quaternion.identity);
+
+        explosionInstance.transform.localScale = Vector3.one * 4;
+        explosionInstance.transform.SetParent(null);
+        
+        // Step 3
+        Destroy(gameObject);
     }
 
     IEnumerator StopRumbleAfterDelay(float delay)
@@ -53,6 +85,16 @@ public class Lives : MonoBehaviour {
     }
 
     void OnApplicationQuit()
+    {
+        CleanUp();
+    }
+
+    void OnDestroy()
+    {
+        CleanUp();
+    }
+
+    void CleanUp()
     {
         if (_gamepad != null)
         {
